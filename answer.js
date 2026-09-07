@@ -22,3 +22,36 @@ function getDayType(day){
   }
 }
 // console.log(getDayType("Friday"));
+
+
+// Answer 3
+function validateUsername(username){
+  if (username.length < 4){
+    return "Too Short";
+  } else if(username.includes(" ")){
+    return "No Space Allowed";
+  }else if(username.toLowerCase().includes("admin")){
+    return "Reserved word";
+  } else {
+    return "Available";
+  }
+}
+// console.log(validateUsername("abutalhaAdmin"));
+
+
+// Answer 4
+function getCngFare(distance, isNight = false, waitingMinuts = 0){
+  let fare = 50;
+  if(distance > 2){
+    fare += (distance -2)*15;
+  }
+  fare += waitingMinuts * 2;
+
+  if(isNight){
+    fare = fare*1.2;
+  }
+  return fare;
+}
+// console.log(getCngFare(5, false, 10));
+
+
